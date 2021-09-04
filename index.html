@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <!-- bootsrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <style>
+        .card-body {
+            background-color: blanchedalmond;
+        }
+
+        #spin {
+            display: none;
+        }
+
+        .lds-hourglass {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .lds-hourglass:after {
+            content: " ";
+            display: block;
+            border-radius: 50%;
+            width: 0;
+            height: 0;
+            margin: 8px;
+            box-sizing: border-box;
+            border: 32px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-hourglass 1.2s infinite;
+        }
+
+        @keyframes lds-hourglass {
+            0% {
+                transform: rotate(0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+
+            50% {
+                transform: rotate(900deg);
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            100% {
+                transform: rotate(1800deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-success">
+    <header>
+
+        <center>
+            <h2 class=" t1 text-light  p-2  mt-4 mb-4 text-uppercase" style="display: inline-block;">Search Any
+                Book</h2>
+        </center>
+        <div class="input-group mb-3 w-50 mx-auto d-flex flex-column flex-xl-row flex-lg-row flex-md-row ">
+            <input id="book-name" type="text" class="t1 form-control fs-5 w-100 mb-2" placeholder="Enter book name"
+                aria-describedby="button-addon2">
+            <button onclick="searchBook()" class="t1 btn fw-bold btn-outline-secondary text-danger fs-5  btn-warning "
+                type="button" id="button-addon2">Click</button>
+        </div>
+
+    </header>
+
+    <!-- main section -->
+    <main>
+
+        <!-- view search result  -->
+        <p id="search" class=" text-white fs-5 w-75 mx-auto  "><span id="search-counter"></span> <span
+                id="show-results"></span>
+        </p>
+
+        <!-- spinner  -->
+        <div class="d-flex justify-content-center">
+            <div id="spin" class="lds-hourglass "></div>
+        </div>
+
+
+
+        <!-- add book in cards  -->
+        <section class="view-book w-75 mx-auto pt-1">
+
+            <div id="add-book" class="row row-cols-1 row-cols-md-3 g-4">
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
